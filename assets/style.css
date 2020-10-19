@@ -38,6 +38,13 @@ header h1 {
     margin: 0;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.nav-selection li{
+    display: inline-block;
+    padding-right: 20px;
+
+}
+
 header a {
     text-decoration: none;
     color: var(--primary-color);
@@ -103,13 +110,13 @@ footer a {
 
 }
 .hero-form {
-    border: 3px solidvar(--secondary-color);
+    border: 3px solid var(--secondary-color);
     background-color:rgba(252, 225, 56, 0.8);
     padding:20px;
     color: var(--secondary-color);
     width: 40%;
     margin: 3.5%;
-    box-shadow: 0 0 10px rgba(0, 0, 0 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
 }
 
@@ -268,24 +275,81 @@ footer a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  
 }
 
 .trainer {
     margin: 20px;
-    background: var(--secondary-color);
     color:var(--primary-color);
     flex: 1;
-}
-
-.trainer img {
-    width: 100%;
-    overflow: auto;
+    
 }
 
 .trainer-bio {
     padding: 25px;
     overflow: auto;
     line-height: 1.3;
+}
+
+.trainer-bio h3 {
+    font-size: 28px;
+    
+}
+
+.trainer-bio h4 {
+    font-weight: lighter;
+    font-size: 22px;
+    margin-bottom: 15px;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    
+}
+
+.trainer-img {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    background-size: cover;
+    
+}
+
+.trainer-img h3 {
+    position: relative;
+    z-index: 2000;
+    transition: margin-right 0.6;
+}
+
+.trainer-img h4 {
+    position: relative;
+    z-index: 2000;
+}
+
+.trainer-image::after{
+    content:"";
+    height: 100%;
+    width: 100%;
+    background: rgba(252, 225, 56, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: margin-right 6s;
+}
+
+.trainer-1 {
+    background-image: url("./images/01-05-trainers/trainer-1.jpg");
+    
+}
+
+.trainer-2 {
+    background-image: url("./images/01-05-trainers/trainer-2.jpg");
+}
+
+.trainer-3 {
+    background-image: url("./images/01-05-trainers/trainer-3.jpg");
 }
 
 .text-left {
@@ -296,8 +360,13 @@ footer a {
     text-align: right;
 }
 
+.trainer-bio{
+    background: var(--secondary-color);
+}
+
 .trainer-bio h3 {
     font-size: 28px;
+    position: relative;
 
 }
 
@@ -305,6 +374,7 @@ footer a {
     font-weight: lighter;
     font-size: 22px;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .trainer-bio p {
@@ -354,24 +424,61 @@ footer a {
     font-style: normal;
 }
 
-.contact-info a {
+.contact-info a{
     color: var(--primary-color);
     
 }
 
+.contact-info p {
+    color: white;
+}
+
+.contact-message {
+    margin: 20px;
+
+}
+
+.contact-form form {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 0px;
+    color: var(--secondary-color);
+    width: 40%;
+    margin: 3.5%;
+
+}
+
+.contact-form h3 {
+    padding: 0 0 0 15px;
+}
+
+
 .contact-form input, .contact-form textarea {
     border-radius: 10px;
     background-color:rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    justify-content: space-between;
+
+
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
     background: rgba(255, 255, 255, 0.8);
     outline: none;
+    
 }
 
 .contact-form button {
     border-radius: 10px;
     background-color: var(--primary-color);
+    border: none;
+    padding: 10px 75px;
+    font-size: 16px;
+    border-radius: 10px;
 }
 
 .contact-form button:hover {
@@ -478,7 +585,7 @@ footer a {
     content:"";
     height: 6px;
     width: 14px;
-    border-left: 2px solid var(--secondary-color;
+    border-left: 2px solid var(--secondary-color);
     border-bottom: 2px solid var(--secondary-color);
     position: absolute;
     left: -26px;
@@ -591,6 +698,10 @@ footer a {
             writing-mode: unset;
             grid-column: 1 / -1;
             grid-row: -1;
+        }
+
+        .trainer-img h3 .trainer-img h4 .trainer-img::after {
+            display: none;
         }
 }
 
